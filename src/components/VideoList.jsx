@@ -1,10 +1,9 @@
 import VideoListEntry from './VideoListEntry.js'
 
-const VideoList = ({videos}) => {
-  console.log('This is videos: ' + videos)
+const VideoList = ({videos, setSelectedVideo}) => {
   return (
     <div className="video-list">
-      {videos.map((video) => <VideoListEntry video={video}/>)}
+      {videos.map((video) => <VideoListEntry setSelectedVideo={(v) => setSelectedVideo(v)}video={video}/>)}
     </div>
   );
 }

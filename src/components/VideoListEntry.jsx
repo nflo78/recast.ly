@@ -1,6 +1,6 @@
 
-const VideoListEntry = ({video}) => (
-  <div className="video-list-entry media">
+const VideoListEntry = ({video, setSelectedVideo}) => (
+  <div onClick={() => setSelectedVideo(video)} className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={video.snippet.thumbnails.default.url} alt="" />
     </div>

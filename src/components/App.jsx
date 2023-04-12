@@ -3,12 +3,12 @@ import videos from '../data/exampleVideoData.js'
 import VideoListEntry from './VideoListEntry.js'
 import VideoPlayer from './VideoPlayer.js'
 
-const { useState } = React;
-const selectedVideo = selectedVideo || videos[0];
+
 
 const App = () => {
-  const [video, setVideo] = setState(0);
-  <"video-list-entry-title" onClick={() => setVideo()}
+  // const { useState } = React;
+  const [selectedVideo, setSelectedVideo] = React.useState(videos[0]);
+
   return (
   <div>
     <nav className="navbar">
@@ -21,7 +21,7 @@ const App = () => {
         <div><h5><em><VideoPlayer video={selectedVideo}/></em> view test goes here</h5></div>
       </div>
       <div className="col-md-5">
-        <div><h5><em><VideoList videos={videos}/></em> test123 view goes here</h5></div>
+        <div><h5><em><VideoList setSelectedVideo={(v) => setSelectedVideo(v)}videos={videos}/></em></h5></div>
       </div>
     </div>
   </div>
